@@ -23,9 +23,11 @@
 <h2>Reverse mode</h2>
 - 如图，一次计算了对于多个x的梯度。
 - 对于输出维度小于输入维度的大多数情况，计算复杂度更低（基于中间参数都是相同维度的假设）
+
 ![ad_rm](img_ad/ad_rm.png)
 
 <h2>注意</h2>
 1. reverse mode 中梯度会累积，如图ad_fm中的v0一横，计算y对于v0的梯度时，由于经过两个中间节点，需要累加。这也是pytorch种需要zero_grad的原因。
 2. 矩阵乘积计算的复杂度。
+
 ![img.png](img_ad/img.png)
